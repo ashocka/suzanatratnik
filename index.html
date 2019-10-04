@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+
+    <title>Suzana Tratnik</title>
+
+    <style type="text/css">
+      #language-toggle li a.si {
+        font-weight: bold;
+      }
+      .lang-en {
+        display: none;
+      }
+    </style>
+
+    <!-- we need our Tabletop -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script type='text/javascript'>    
+      var sheet = 'https://docs.google.com/spreadsheets/d/1zZ40wQIbLyHwlvM50jjTW0Ij31EIPx700hM9V_R9Qgo/edit?usp=sharing';
+
+      var lang = "SI";
+      function choose(choice){
+        lang = choice;
+      }
+
+      // get fresh events
+      function init() {
+        Tabletop.init( { key: sheet,
+                         callback: showInfo,
+                         simpleSheet: true
+                       } )
+      }
+
+      function showInfo(data, tabletop) {
+        var Events = tabletop.sheets("Events").elements;
+
+        for (var i = 0; i < Events.length; i++) {
+        document.getElementById("dogodki").innerHTML += "<a href='" + Events[i].url + "' class='dogodek'><h6 class=''>" + Events[i].ime + "</h6><p>" + Events[i].podrobnosti + "</p></a>";
+        }
+      
+      }
+
+      window.addEventListener('DOMContentLoaded', init)
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid affix navigacija">
+      <div id="navigacija-wrapper">
+          <div class="row">
+        <div class="col-2 col-md-9">
+        <a href="javascript:;" class="menu d-md-none"></a>
+
+        <nav>
+          <a class="close d-md-none"></a>
+
+          <ul id="navigacija">
+            <li><a class="lang-si" href="">Kontakt</a>
+                <a class="lang-en" href="">Contact</a>
+            </li>
+            <li><a class="lang-si" href="">Življenjepis</a>
+                <a class="lang-en" href="">Biography</a>
+            </li>
+            <li><a class="lang-si" href="">Gradiva za medije</a>
+                <a class="lang-en" href="">Press Kit</a>
+            </li>
+            <li><a class="lang-si" href="">Aktualni dogodki</a>
+                <a class="lang-en" href="">Current events</a>
+                <ul id="dogodki">
+                    <li><a href="">sample event</a></li>
+                    <li><a href="">another sample event</a></li>
+                </ul>
+            </li>
+          </ul>
+        </nav>
+        </div>
+
+        <div class="col-8 d-md-none">
+            <span class="top-mobile">Suzana Tratnik</span>
+        </div>
+
+
+        <div class="col-2 col-md-3">
+          <div class="">
+          <div id="language-toggle">
+            <ul>
+                
+                <li><a id="activate" href="javascript:;">LANG</a>
+                    <ul class="lang-menu">
+                        <li><a class="en" onClick="choose('EN')" href="javascript:;">EN</a></li>
+                        <li><a class="si" onClick="choose('SI')" href="javascript:;">SI</a></li>
+                    </ul>
+                </li>
+            </ul>
+          </div>
+        </div>
+        </div>
+          </div>
+        </div>
+      </div><!-- end of .navigacija -->
+
+    <header>
+    <div id="header-image">
+      <div class="container">
+        <div class="row images">
+          <div class="col-12 faca">
+            <h1 class="d-none d-md-block">Suzana Tratnik</h1>
+            <!--<a class="lang-en" href="javascript:;">Upcoming events</a>
+            <a class="lang-si" href="javascript:;">Aktualni dogodki</a>-->
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </header>
+
+<div class="container">
+  <div id="dela-predstavljeno">
+
+    <div class="row">
+
+<div class='col-lg-4 col-md-6 col-12'><div class="delo">
+        <div class='top'>
+                <div class='naslovnica'>
+                        <img class='' src='img/naslovke/niclo.jpg' title='Pod ničlo' />
+                </div>
+        <div class='delo-top'>
+        <h3 class='naslov lang-si'>Pod ničlo</h3>
+        <h3 class='naslov lang-en'>Below Zero</h3>
+        <div class='kategorija lang-si'>kratke zgodbe</div>
+        <div class='kategorija lang-en'>short stories</div>
+        </div>
+        </div>
+        <div class='delo-info'>
+                <div class='zalozba'><img src="img/logo-lambda.png" alt="škuc lambda logo" />ŠKUC-Lambda</div>
+                <div class='kraj-letnica'>
+                <span class='kraj'>Ljubljana</span>
+                <span class='letnica'>1998</span>
+        </div>
+        <div class='prevodi lang-si'>Prevodi: nemški</div>
+        <div class='prevodi lang-en'>Translations: German</div>
+
+        <p class='citat'>Zdaj le priznam, da me je gnala radovednost. Ker še nikoli nisem spala z aktivno in sem hotela izkusiti, kako je, če ti ženska ne pusti, da se je dotakneš. Kaj pomeni biti objekt ženski, kakšna je igra moči, ko biologija ni usoda.</p>
+        
+        <a class='url' href='#'>Nakup na spletu</a>
+        </div>
+</div></div>
+
+<div class='col-lg-4 col-md-6 col-12'><div class="delo">
+        <div class='top'>
+                <div class='naslovnica'>
+                        <img class='' src='img/naslovke/damjan.jpg' title='Ime mi je Damjan' />
+                </div>
+        <div class='delo-top'>
+        <h3 class='naslov lang-si'>Ime mi je Damjan</h3>
+        <h3 class='naslov lang-en'>My Name Is Damjan</h3>
+        <div class='kategorija lang-si'>roman</div>
+        <div class='kategorija lang-en'>novel</div>
+        </div>
+        </div>
+        <div class='delo-info'>
+                <div class='nagrade'>Uvrščen v zbirko Sto slovanskih romanov</div>
+                <div class='zalozba'><img src="img/logo-lambda.png" alt="škuc lambda logo" />ŠKUC-Lambda</div>
+                <div class='kraj-letnica'>
+                    <span class='kraj'>Ljubljana</span>
+                    <span class='letnica'>2001</span>
+                </div>
+        <div class='ponatis'>Ponatis: Mladinska knjiga, 2014</div>
+        <div class='ponatis'>Ponatis: Mladinska knjiga - Rastem s knjigo, 2014</div>
+        <div class='prevodi lang-si'>Prevodi: nemški, srbski, češki, slovaški, makedonski</div>
+        <div class='prevodi lang-en'>Translations: German, Serbian, Czech, Slovak, Macedonian</div>
+        <div class='adaptacija'>Monodrama: režija Alen Jelen, Škuc gledališče, 2002</div>
+        <p class='citat'>Ja, fejst, a ne, kako naj zdaj frendom povem, da bom nekaj časa obiskoval dohtarja za glavo, no, saj ne da bi bil za v Polje, samo tako za družinski turizem. Kar dvignilo se mi je. Vse.</p>
+                <a class='url' href='#'>Nakup na spletu</a>
+        </div>
+</div></div>
+
+
+<div class='col-lg-4 col-md-6 col-12'><div class="delo">
+        <div class='top'>
+                <div class='naslovnica'>
+                        <img class='' src='img/naslovke/dvoriscu.jpg' title='Na svojem dvorišču' />
+                </div>
+        <div class='delo-top'>
+        <h3 class='naslov lang-si'>Na svojem dvorišču</h3>
+        <h3 class='naslov lang-en'>In One's Own Backyard</h3>
+        <div class='kategorija lang-si'>kratke zgodbe</div>
+        <div class='kategorija lang-en'>short stories</div>
+        </div>
+        </div>
+        <div class='delo-info'>
+                <div class='zalozba'><img src="img/logo-lambda.png" alt="škuc lambda logo" />ŠKUC-Lambda</div>
+                <div class='kraj-letnica'>
+                <span class='kraj'>Ljubljana</span>
+                <span class='letnica'>2003</span>
+        </div>
+        <div class='prevodi lang-si'>Prevodi: hrvaški, makedonski</div>
+        <div class='prevodi lang-en'>Translations: Croatian, Macedonian</div>
+
+                <p class='citat'>Na vegastih policah so kraljevali strupi proti podganam, mišim, koloradskemu hrošču, solatnim ušem in mačjim bolham – z njimi smo bili varni. S strupi namreč. Tam so bili tudi srpi; bolj zarjaveli za visoko travo in manj zarjaveli za nizko, vsi pa so bili tudi za tetanus.</p>
+                <a class='url' href='#'>Nakup na spletu</a>
+        </div>
+</div></div>
+
+<!--</div><div class="row">-->
+
+<div class='col-lg-4 col-md-6 col-12'><div class="delo">
+        <div class='top'>
+                <div class='naslovnica'>
+                        <img class='' src='img/naslovke/vzporednice.jpg' title='Vzporednice' />
+                </div>
+        <div class='delo-top'>
+        <h3 class='naslov lang-si'>Vzporednice</h3>
+        <h3 class='naslov lang-en'>Parallels</h3>
+        <div class='kategorija lang-si'>kratke zgodbe</div>
+        <div class='kategorija lang-en'>short stories</div>
+        </div>
+        </div>
+        <div class='delo-info'>
+                <div class='nagrade'>Nagrada Prešernovega sklada za literaturo 2017</div>
+                <div class='nagrade'>Nominacija za nagrado Fabula 2007</div>
+                <div class='zalozba'><img src="img/logo-lambda.png" alt="škuc lambda logo" />ŠKUC-Lambda</div>
+                <div class='kraj-letnica'>
+                <span class='kraj'>Ljubljana</span>
+                <span class='letnica'>2005</span>
+        </div>
+        <div class='prevodi lang-si'>Prevodi: nemški, madžarski, arabski</div>
+        <div class='prevodi lang-en'>Translations: German, Hungarian, Arabic</div>
+
+                <p class='citat'>Sedela sem v kuhinji. V želodcu me je peklilo. Mama mi je kuhala puding. Razmišljala sem, da sem morda Vesno oslepila, kar se ni niti najmanj ujemalo z vanilijevim pudingom.</p>
+                <a class='url' href='#'>Nakup na spletu</a>
+        </div>
+</div></div>
+
+<div class='col-lg-4 col-md-6 col-12'><div class="delo">
+        <div class='top'>
+                <div class='naslovnica'>
+                        <img class='' src='img/naslovke/svet.jpg' title='Tretji svet' />
+                </div>
+        <div class='delo-top'>
+        <h3 class='naslov lang-si'>Tretji svet</h3>
+        <h3 class='naslov lang-en'>The Third World</h3>
+        <div class='kategorija lang-si'>roman</div>
+        <div class='kategorija lang-en'>novel</div>
+        </div>
+        </div>
+        <div class='delo-info'>
+                <div class='nagrade'>Nominacija za nagrado Kresnik</div>
+                <div class='zalozba'><img src="img/logo-ck.png" alt="cankarjeva založba logo" />Cankarjeva založba</div>
+                <div class='kraj-letnica'>
+                <span class='kraj'>Ljubljana</span>
+                <span class='letnica'>2007</span>
+        </div>
+        <div class='prevodi lang-si'>Prevod: češčina</div>
+        <div class='prevodi lang-en'>Translation: Czech</div>
+
+                <p class='citat'>Ulegla se je na prosto posteljo s kozarcem vina in s cigareto v roki, pokrčila noge v kolenih, me pogledala in rekla: »Hočem se ljubiti s celim vesoljem.« Žal to vesolje v praksi ni vključevalo mene.</p>
+                <a class='url' href='#'>Nakup na spletu</a>
+        </div>
+</div></div>
+
+
+<div class='col-lg-4 col-md-6 col-12'><div class="delo">
+        <div class='top'>
+                <div class='naslovnica'>
+                        <img class='' src='img/naslovke/vlaku.jpg' title='Česa nisem nikoli razumela na vlaku' />
+                </div>
+        <div class='delo-top'>
+        <h3 class='naslov lang-si'>Česa nisem nikoli razumela na vlaku</h3>
+        <h3 class='naslov lang-en'>What I Never Understood Riding the Train</h3>
+        <div class='kategorija lang-si'>kratke zgodbe</div>
+        <div class='kategorija lang-en'>short stories</div>
+        </div>
+        </div>
+        <div class='delo-info'>
+                <div class='nagrade'>Nominacija za nagrado Fabula</div>
+                <div class='zalozba'><img src="img/logo-studentska.png" alt="študentska založba logo" />Študentska založba</div>
+                <div class='kraj-letnica'>
+                <span class='kraj'>Ljubljana</span>
+                <span class='letnica'>2008</span>
+        </div>
+          <p class='citat'>Oblikovala si je svojo filozofijo o kraji, filozofijo M. U. K. To je pomenilo: majhno – uporabno – kakovostno. Če kradeš majhne predmete, to pravzaprav nikomur ne škodi. Vsakdo na tem svetu lahko pogreši kaj malega, kaj šele trgovine ali velikanski diskonti, tam imajo vendar na stotine majhnih stvari, in to celo povsem enakih.</p>
+                <a class='url' href='#'>Nakup na spletu</a>
+        </div>
+</div></div>
+
+<!--</div><div class="row">-->
+
+<div class='col-lg-4 col-md-6 col-12'><div class="delo">
+        <div class='top'>
+                <div class='naslovnica'>
+                        <img class='' src='img/naslovke/svetova.jpg' title='Dva svetova' />
+                </div>
+        <div class='delo-top'>
+        <h3 class='naslov lang-si'>Dva svetova</h3>
+        <h3 class='naslov lang-en'>Two Worlds</h3>
+        <div class='kategorija lang-si'>kratke zgodbe</div>
+        <div class='kategorija lang-en'>short stories</div>
+        </div>
+        </div>
+        <div class='delo-info'>
+                <div class='nagrade'>Nominacija za nagrado Fabula</div>
+                <div class='zalozba'><img src="img/logo-lambda.png" alt="škuc lambda logo" />ŠKUC-Lambda</div>
+                <div class='kraj-letnica'>
+                <span class='kraj'>Ljubljana</span>
+                <span class='letnica'>2009</span>
+        </div>
+        <div class='prevodi'></div>
+                <p class='citat'>»S tabo bi lahko bila do konca življenja,« mi je še isti mesec kakor mimogrede rekla. Morali bi se bati tistih, ki nam zatrjujejo, da bi lahko bili z nami do smrti.</p>
+                <a class='url' href='#'>Nakup na spletu</a>
+        </div>
+</div></div>
+
+
+<div class='col-lg-4 col-md-6 col-12'><div class="delo">
+        <div class='top'>
+                <div class='naslovnica'>
+                        <img class='' src='img/naslovke/ganca.jpg' title='Zafuškana Ganca' />
+                </div>
+        <div class='delo-top'>
+        <h3 class='naslov lang-si'>Zafuškana Ganca</h3>
+        <h3 class='naslov lang-en'>Hanny Rattie</h3>
+        <div class='kategorija lang-si'>slikanica</div>
+        <div class='kategorija lang-en'>picture book</div>
+        </div>
+        </div>
+        <div class='delo-info'>
+                <div class='zalozba'><img src="img/logo-litera.png" alt="litera logo" />Litera-Mladež</div>
+                <div class='kraj-letnica'>
+                <span class='kraj'>Maribor</span>
+                <span class='letnica'>2010</span>
+        </div>
+        <div class='prevodi'></div>
+                <p class='citat'>»Predrage gostiteljice in gostitelji,« je nadaljevala Ganca. »Prvi dan pustite goste same doma, da se v miru pokakajo in nemoteno prebrskajo vaš hladilnik.«</p>
+                <a class='url' href='#'>Nakup na spletu</a>
+        </div>
+</div></div>
+
+<div class='col-lg-4 col-md-6 col-12'><div class="delo">
+        <div class='top'>
+                <div class='naslovnica'>
+                        <img class='' src='img/naslovke/rezervat.jpg' title='Rezervat' />
+                </div>
+        <div class='delo-top'>
+        <h3 class='naslov lang-si'>Rezervat</h3>
+        <h3 class='naslov lang-en'>Reservation</h3>
+        <div class='kategorija lang-si'>kratke zgodbe</div>
+        <div class='kategorija lang-en'>short stories</div>
+        </div>
+        </div>
+        <div class='delo-info'>
+                <div class='zalozba'><img src="img/logo-litera.png" alt="litera logo" />Litera-Piramida</div>
+                <div class='kraj-letnica'>
+                <span class='kraj'>Maribor</span>
+                <span class='letnica'>2012</span>
+        </div>
+        <div class='prevodi'></div>
+                <p class='citat'>Preden te nabutajo z nevroleptiki in te pripeljejo nazaj. Preden te začnejo glodati črv dvoma ali črv slabe vesti ali pa črv trdega diska in te vržejo nazaj v ta svet in spet prideš k sebi in z olajšanjem ugotoviš, da ti v bistvu gre bolje, pravzaprav ti gre zelo dobro, saj si na povsem odprtem oddelku.</p>
+                <a class='url' href='#'>Nakup na spletu</a>
+        </div>
+</div></div>
+
+<!--</div><div class="row">-->
+
+<div class='col-lg-4 col-md-6 col-12'><div class="delo">
+        <div class='top'>
+                <div class='naslovnica'>
+                        <img class='' src='img/naslovke/glas.jpg' title='Noben glas' />
+                </div>
+        <div class='delo-top'>
+        <h3 class='naslov lang-si'>Noben glas</h3>
+        <h3 class='naslov lang-en'>No Voice</h3>
+        <div class='kategorija lang-si'>kratke zgodbe</div>
+        <div class='kategorija lang-en'>short stories</div>
+        </div>
+        </div>
+        <div class='delo-info'>
+                <div class='nagrade'>Nagrada Novo mesto short za kratko prozo</div>
+                <div class='zalozba'><img src="img/logo-litera.png" alt="litera logo" />Litera-Mladež</div>
+                <div class='kraj-letnica'>
+                <span class='kraj'>Ljubljana</span>
+                <span class='letnica'>2016</span>
+        </div>
+        <div class='prevodi lang-si'>Prevod: španski</div>
+        <div class='prevodi lang-en'>Translation: Spanish</div>
+                <p class='citat lang-si'>Bilo me je strah. Vedela sem, da stara mama umira, in nisem hotela biti zraven, ko bi smrt dejansko prišla po njeno življenje. Hotela sem, da smrt in stara mama to opravita brez mene.</p>
+                <a class='url' href='#'>Nakup na spletu</a>
+        </div>
+</div></div>
+
+<div class='col-lg-4 col-md-6 col-12'><div class="delo">
+        <div class='top'>
+                <div class='naslovnica'>
+                        <img class='' src='img/naslovke/zivljenje.jpg' title='Tombola ali življenje!' />
+                </div>
+        <div class='delo-top'>
+        <h3 class='naslov lang-si'>Tombola ali življenje!</h3>
+        <h3 class='naslov lang-en'>Raffle Or Life!</h3>
+        <div class='kategorija lang-si'>roman</div>
+        <div class='kategorija lang-en'>novel</div>
+        </div>
+        </div>
+        <div class='delo-info'>
+                <div class='nagrade'>Nagrada Desetnica</div>
+                <div class='zalozba'><img src="img/logo-mk.png" alt="mladinska knjiga logo" />Mladinska Knjiga — Odisej</div>
+                <div class='kraj-letnica'>
+                <span class='kraj'>Ljubljana</span>
+                <span class='letnica'>2017</span>
+        </div>
+        <div class='prevodi lang-si'>Prevod: srbščina</div>
+        <div class='prevodi lang-en'>Translation: Serbian</div>
+
+                <p class='citat'>A ko so tako plesali vsi skupaj, vsi, ki so imeli radi glem rokerje, a niso marali socialne delavke in razredničarke, nekateri med njimi tudi ne učenja ne knjig ne šole nasploh, vsi pa so bili asimulanti ali pa zgube, je bilo vse prav, nobenih razlik po klinih.</p>
+                <a class='url' href='#'>Nakup na spletu</a>
+        </div>
+</div></div>
+
+</div>
+</div><!-- end: #dela.predstavljeno -->
+
+      <div id="dela">
+        <div class="row">
+        <div class="col-md-4 col-12">
+          <h2 class="lang-si">Strokovne monografije / esejistika</h2>
+          <h2 class="lang-en">Essays</h2>
+        </div>
+
+        <div class="col-md-8 col-12 dela">
+          <div class="delo">
+            <h6>L, zbornik o lezbičnem gibanju na Slovenskem 1984-1995</h6>
+            <p>soavtorica Segan N. V., Škuc-Lambda, Ljubljana 1995</p>
+          </div>
+          <div class="delo">
+            <h6>Lezbična zgodba: literarna konstrukcija seksualnosti</h6>
+            <p>študija, Škuc-Lambda, Ljubljana 2004</p>
+          </div>
+          <div class="delo">
+            <h6>Lezbični aktivizem po korakih</h6>
+            <p>memoari, Založba */cf, Ljubljana 2013</p>
+          </div>
+          <div class="delo">
+            <h6>Konec strpnosti</h6>
+            <p>eseji, Škuc-Vizibilija, Ljubljana 2013</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-md-4 col-12">
+          <h2 class="lang-si">Tuji prevodi</h2>
+          <h2 class="lang-en">Translations</h2>
+        </div>
+
+        <div class="col-md-8 col-12 dela">
+          <div class="delo">
+            <h6>Unterm Strich</h6>
+            <p>(Pod ničlo)</p>
+            <p>Milena Verlag, Dunaj 2002</p>
+          </div>
+
+          <div class="delo">
+            <h6>Jmenuju se Damián</h6>
+            <p>(Ime mi je Damjan)</p>
+            <p>One Woman Press, Praga 2005</p>
+          </div>
+
+          <div class="delo">
+            <h6>Mein Name ist Damian</h6>
+            <p>(Ime mi je Damjan)</p>
+            <p>Milena Verlag, Dunaj 2005</p>
+          </div>
+
+          <div class="delo">
+            <h6>Ime mi je Damjan</h6>
+            <p>Deve, Beograd, 2005</p>
+          </div>
+
+          <div class="delo">
+            <h6>Volám sa Damián</h6>
+            <p>(Ime mi je Damjan)</p>
+            <p>Sto slovanských románov - Literárne informačné centrum, Bratislava 2008</p>
+          </div>
+
+          <div class="delo">
+            <h6>Massima discrezione</h6>
+            <p>Zoe edizioni, Forli 2009</p>
+          </div>
+
+          <div class="delo">
+            <h6>U svojem dvorištu</h6>
+            <p>(Na svojem dvorišču)</p>
+            <p>Kontra, Zagreb 2011</p>
+          </div>
+
+          <div class="delo">
+            <h6>Farbfernsehen und sterben</h6>
+            <p>(Vzporednice)</p>
+            <p>Zaglossus, Dunaj 2011</p>
+          </div>
+
+          <div class="delo">
+            <h6>Għaraq Xort’Oħra</h6>
+            <p>Brane Mozetič in Suzana Tratnik</p>
+            <p>Inizjamed / Malta Mediterranean Literature Festival, Valetta, 2012</p>
+          </div>
+
+          <div class="delo">
+            <h6>Třetí svět</h6>
+            <p>(Tretji svet)</p>
+            <p>Větrné mlýny, Brno, 2013</p>
+          </div>
+
+          <div class="delo">
+            <h6>Do svojot dvor</h6>
+            <p>(Na svojem dvorišču)</p>
+            <p>Templum, Skopje 2013</p>
+          </div>
+
+          <div class="delo">
+            <h6>Párhuzamosok</h6>
+            <p>(Vzporednice)</p>
+            <p>Libri Kiadó, Budapest 2014</p>
+          </div>
+
+          <div class="delo">
+            <h6>Ime mi je Damjan</h6>
+            <p>Sto slovanskih romanov, Arhipelag, Beograd 2014</p>
+          </div>
+
+          <div class="delo">
+            <h6>Posiciones geográficas</h6>
+            <p>Dos Bigotes, Madrid 2014</p>
+          </div>
+
+          <div class="delo">
+            <h6>Vzporednice</h6>
+            <p>Sefsafa Publishing House, Kairo 2015 </p>
+          </div>
+
+          <div class="delo">
+            <h6>Games with Greta and Other Stories</h6>
+            <p>Dalkey Archive Press, Chicago, London 2016</p>
+          </div>
+
+          <div class="delo">
+            <h6>Ninguna voz</h6>
+            <p>(Noben glas)</p>
+            <p>Arlequin, Guadalajara 2018</p>
+          </div>
+
+          <div class="delo">
+            <h6>Se vikam Damjan</h6>
+            <p>(Ime mi je Damjan)</p>
+            <p>Blesok, Skopje 2018</p>
+          </div>
+
+          <div class="delo">
+            <h6>Tombola ili život!</h6>
+            <p>(Tombola ali življenje!)</p>
+            <p>Arete, Beograd 2018</p>
+          </div>
+        </div>
+        </div><!-- end row -->
+      </div>
+
+
+
+      <div id="zivljenjepis" class="lang-si">
+        <div class="row">
+          <div class="col-md-4 col-12">
+            <h2>Življenjepis</h2>
+          </div>
+          <div class="col-md-8 col-12">
+            <p>Suzana Tratnik (1963, Murska Sobota). Diplomirala je iz sociologije na Fakulteti za družbene vede in magistrirala iz antropologije spolov na Institutum Studiorum Humanitatis. Živi in dela v Ljubljani kot pisateljica, prevajalka in publicistka. Je soustanoviteljica lezbične skupine LL v Ljubljani leta 1987 in sodelavka Festivala LGBT filma. Objavila je sedem kratkroproznih zbirk: Pod ničlo (1997), Na svojem dvorišču (2003), Vzporednice (2005), Česa nisem nikoli razumela na vlaku (2008), Dva svetova (2010), Rezervat (2012) in Noben glas (2016); tri romane: Ime mi je Damjan (2001), Tretji svet (2007) in Tombola ali življenje! (2017), otroško slikanico Zafuškana Ganca (2010), napisala pa je še monodramo Ime mi je Damjan (2002), radijsko igro Lep dan še naprej (2011), dve strokovni deli o lezbičnem gibanju v Sloveniji in o lezbični literaturi ter memoare Lezbični aktivizem po korakih (2013). Leta 2007 je prejela nagrado Prešernovega sklada za literaturo, leta 2017 nagrado Novo mesto short za kratko prozo in leta 2018 nagrado Desetnica za najboljši mladinski roman. Njene knjige in kratke zgodbe so prevedene v več kot dvajset jezikov, sama pa je prevedla več knjig britanske in ameriške proze in strokovne literature.</p>
+            <p>V prozi Suzane Tratnik se prepletata dve osrednji temi: usode obrobnih eksistenc v sodobni urbani družbi in pogled na otroštvo v jugoslovanskih socialističnih 60-ih in 70-ih letih.</p>
+        </div>
+        </div>
+      </div>
+      <div id="bibliography" class="lang-en">
+        <div class="row">
+          <div class="col-md-4 col-12">
+            <h2>Bibliography</h2>
+          </div>
+          <div class="col-md-8 col-12">
+            <p>Suzana Tratnik (1963, Murska Sobota). She obtained her BA in sociology from the Faculty of Social Sciences at the University of Ljubljana, and her MA in gender anthropology from the Institutum Studiorum Humanitatis in Ljubljana, where she lives and works as a writer, translator, and publicist. She is a lesbian activist since 1987 and a programmer of the LGBT Film Festival. She published seven collections of short stories: Pod ničlo (Bellow Zero, 1997), Na svojem dvorišču (In One's Own Backyard, 2003), Vzporednice (Parallels, 2005), Česa nisem nikoli razumela na vlaku (Things I've Never Understood on the Train, 2008), Dva svetova (Two Worlds, 2010), Rezervat (Reservation, 2012), and Noben glas (No Voice, 2016), three novels: Ime mi je Damjan (My Name is Damjan, 2001), Tretji svet (Third World, 2007) and Tombola ali življenje! (Bingo or Life!, 2017), the children’s picture book Zafuškana Ganca (The Hany Rattie, 2010), as well as a monodrama Ime mi je Damjan (My Name is Damjan, 2002), a radio play Lep dan še naprej (Have a Nice Day, 2012), and two expertises: one on the lesbian movement in Slovenia, and another on lesbian literature, and memoirs Lezbični aktivizem po korakih (Lesbian Activism Step by Step, 2013). She received the national Prešeren Foundation Award for Literature in 2007, Novo mesto short Award for best short fiction in 2017, and Desetnica Award for best youth fiction in 2018. Her books and short stories have been translated in more than twenty languages, while she herself has translated several books of British and American fiction and non-fiction.</p>
+            <p>The two main themes in Tratnik’s fiction are marginal destinies of contemporary urban life and presentations of childhood in Yugoslav 60s and 70s.</p>
+        </div>
+      </div>
+      </div>
+
+<hr />
+<footer>
+Copyright 2019 Suzana Tratnik
+</footer>
+
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- special scripts -->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

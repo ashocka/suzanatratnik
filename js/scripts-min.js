@@ -1,0 +1,1 @@
+jQuery(document).ready(function(){function n(){"EN"===lang?($(".lang-en").show(),$(".lang-si").hide()):(lang="SI")&&($(".lang-en").hide(),$(".lang-si").show())}n(),$("#language-toggle li a").click(function(){n(),$("#language-toggle li a").css("font-weight","normal"),$(this).css("font-weight","bold")}),$(".close").click(function(){$("nav").animate("left","-82%")})});
