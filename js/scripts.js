@@ -26,13 +26,11 @@ jQuery( document ).ready(function() {
 	$('.close').click(function(){
 		$('nav').hide();
 		$('.navigacija').css('height', 'unset');
-		//$('.menu').show();
 	});
 
 	$('.menu').click(function(){
 		$('nav').show();
 		$('.navigacija').css('height', '100vh');
-		//$('.menu').hide();
 	});
 
 	$('#language-toggle #activate').click(function(){

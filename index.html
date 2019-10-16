@@ -21,6 +21,16 @@
       }
     </style>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+    <link rel="manifest" href=img/fav/site.webmanifest">
+    <link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#2e3945">
+    <link rel="shortcut icon" href="img/fav/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2e3945">
+    <meta name="msapplication-config" content=""img/fav/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
     <!-- we need our Tabletop -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
     <script type='text/javascript'>    
@@ -52,6 +62,7 @@
     </script>
   </head>
   <body>
+
     <div class="container-fluid affix navigacija">
       <div id="navigacija-wrapper">
           <div class="row">
@@ -65,18 +76,11 @@
             <li><a class="lang-si" href="">Kontakt</a>
                 <a class="lang-en" href="">Contact</a>
             </li>
-            <li><a class="lang-si" href="">Življenjepis</a>
-                <a class="lang-en" href="">Biography</a>
+            <li><a class="lang-si" href="#bio">Življenjepis</a>
+                <a class="lang-en" href="#bio">Biography</a>
             </li>
             <li><a class="lang-si" href="">Gradiva za medije</a>
                 <a class="lang-en" href="">Press Kit</a>
-            </li>
-            <li><a class="lang-si" href="">Aktualni dogodki</a>
-                <a class="lang-en" href="">Current events</a>
-                <ul id="dogodki">
-                    <li><a href="">sample event</a></li>
-                    <li><a href="">another sample event</a></li>
-                </ul>
             </li>
           </ul>
         </nav>
@@ -86,34 +90,35 @@
             <span class="top-mobile">Suzana Tratnik</span>
         </div>
 
-
         <div class="col-2 col-md-3">
-          <div class="">
           <div id="language-toggle">
-            <ul>
-                
-                <li><a id="activate" href="javascript:;">LANG</a>
-                    <ul class="lang-menu">
-                        <li><a class="en" onClick="choose('EN')" href="javascript:;">EN</a></li>
-                        <li><a class="si" onClick="choose('SI')" href="javascript:;">SI</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <a id="activate" href="javascript:;">LANG</a>
+
+            <div class="lang-menu">
+                <a class="close d-md-none"></a>
+
+                <ul>
+                    <li><a class="en" onClick="choose('EN')" href="javascript:;">EN</a></li>
+                    <li><a class="si" onClick="choose('SI')" href="javascript:;">SI</a></li>
+                    </li>
+                </ul>
+            </div>
           </div>
         </div>
-        </div>
+
           </div>
         </div>
       </div><!-- end of .navigacija -->
 
     <header>
     <div id="header-image">
+
       <div class="container">
         <div class="row images">
           <div class="col-12 faca">
             <h1 class="d-none d-md-block">Suzana Tratnik</h1>
-            <!--<a class="lang-en" href="javascript:;">Upcoming events</a>
-            <a class="lang-si" href="javascript:;">Aktualni dogodki</a>-->
+            <a class="lang-en dogodki-gumb" href="#dogodki">Upcoming events</a>
+            <a class="lang-si dogodki-gumb" href="#dogodki">Aktualni dogodki</a>
           </div>
         </div>
       </div>
@@ -427,8 +432,8 @@
 
       <div id="dela">
         <div class="row">
-        <div class="col-md-4 col-12">
-          <h2 class="lang-si">Strokovne monografije / esejistika</h2>
+        <div class="col-md-4 col-12" name="eseji">
+          <h2 class="lang-si">Strokovne monografije in esejistika</h2>
           <h2 class="lang-en">Essays</h2>
         </div>
 
@@ -452,7 +457,7 @@
         </div>
         </div>
 
-        <div class="row">
+        <div class="row" name="prevodi">
         <div class="col-md-4 col-12">
           <h2 class="lang-si">Tuji prevodi</h2>
           <h2 class="lang-en">Translations</h2>
@@ -572,7 +577,7 @@
 
 
 
-      <div id="zivljenjepis" class="lang-si">
+      <div id="zivljenjepis" name="bio" class="lang-si">
         <div class="row">
           <div class="col-md-4 col-12">
             <h2>Življenjepis</h2>
@@ -595,18 +600,28 @@
       </div>
       </div>
 
-<hr />
+    <div class="events row" name="dogodki">
+        <div class="col-md-4 col-12">
+            <h2 class="lang-si">Aktualni dogodki</h2>
+            <h2 class="lang-en">Current events</h2>
+        </div>
+        <div id="dogodki" class="col-md-8 col-12">
+                    <!-- auto-filled -->
+        </div>
+    </div>
+
 <footer>
-Copyright 2019 Suzana Tratnik
+<p class="lang-si"><img src="img/fav/favicon-16x16.png" alt="logo Suzana Tratnik" title="logo" />Vse pravice pridržane 2019 Suzana Tratnik <span>/</span> fotografija: Nada Žgank <span>/</span> splet: Heidi Pun</p>
+<p class="lang-en"><img src="img/fav/favicon-16x16.png" alt="logo Suzana Tratnik" title="logo" />Copyright 2019 Suzana Tratnik <span>/</span> photography: Nada Žgank <span>/</span> web: Heidi Pun</p>
 </footer>
 
 </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="" crossorigin="anonymous"></script>
     <!-- special scripts -->
     <script src="js/scripts.js"></script>
   </body>
