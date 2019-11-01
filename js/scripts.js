@@ -6,9 +6,13 @@ jQuery( document ).ready(function() {
 	    if (lang === 'EN') {
 	    	$('.lang-en').show();
 	    	$('.lang-si').hide();
+
+	    	$('#tombola').parent().css('margin-top', '60px');
 	    } else if (lang = 'SI') {
 	    	$('.lang-en').hide();
 	    	$('.lang-si').show();
+
+	    	$('#tombola').parent().css('margin-top', '0');
 	    }
 	}
 
