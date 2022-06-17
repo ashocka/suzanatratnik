@@ -37,6 +37,26 @@
     <meta property="og:url" content="http://suzanatratnik.si/" />
     <meta property="og:description" content="Spletna stran nagrajene pisateljice Suzane Tratnik. Official website of the award-winning writer Suzana Tratnik." />
 
+    <!-- Tabletop new -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+
+    <script type='text/javascript'>
+            function init() {
+          Papa.parse('https://docs.google.com/spreadsheets/d/1zZ40wQIbLyHwlvM50jjTW0Ij31EIPx700hM9V_R9Qgo/pub?output=csv', {
+          download: true,
+          header: true,
+          complete: function(results) {
+            var data = results.data
+            console.log(data)
+          }
+        })
+                window.addEventListener('DOMContentLoaded', init)
+        }
+    </script>
+
+
+
+
     <!-- we need our Tabletop -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
     <script type='text/javascript'>    
