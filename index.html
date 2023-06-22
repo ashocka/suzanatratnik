@@ -34,58 +34,18 @@
     <meta property="og:title" content="Suzana Tratnik" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="img/social.jpg" />
-    <meta property="og:url" content="http://suzanatratnik.si/" />
+    <meta property="og:url" content="https://suzanatratnik.si/" />
     <meta property="og:description" content="Spletna stran nagrajene pisateljice Suzane Tratnik. Official website of the award-winning writer Suzana Tratnik." />
 
-    <!-- Tabletop new -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script type='text/javascript'> 
+        var lang = "SI";
+                function choose(choice){
+                        lang = choice;
+                }
 
-    <script type='text/javascript'>
-            function init() {
-          Papa.parse('https://docs.google.com/spreadsheets/d/1zZ40wQIbLyHwlvM50jjTW0Ij31EIPx700hM9V_R9Qgo/pub?output=csv', {
-          download: true,
-          header: true,
-          complete: function(results) {
-            var data = results.data
-            console.log(data)
-          }
-        })
-                window.addEventListener('DOMContentLoaded', init)
-        }
     </script>
 
 
-
-
-    <!-- we need our Tabletop -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-    <script type='text/javascript'>    
-      var sheet = 'https://docs.google.com/spreadsheets/d/1zZ40wQIbLyHwlvM50jjTW0Ij31EIPx700hM9V_R9Qgo/edit?usp=sharing';
-
-      var lang = "SI";
-      function choose(choice){
-        lang = choice;
-      }
-
-      // get fresh events
-      function init() {
-        Tabletop.init( { key: sheet,
-                         callback: showInfo,
-                         simpleSheet: true
-                       } )
-      }
-
-      function showInfo(data, tabletop) {
-        var Events = tabletop.sheets("Events").elements;
-
-        for (var i = 0; i < Events.length; i++) {
-        document.getElementById("dogodki").innerHTML += "<a href='" + Events[i].url + "' class='dogodek'><h6 class=''>" + Events[i].ime + "</h6><p>" + Events[i].podrobnosti + "</p></a>";
-        }
-      
-      }
-
-      window.addEventListener('DOMContentLoaded', init)
-    </script>
   </head>
   <body>
 
@@ -809,16 +769,93 @@
             <h2 class="lang-en">Upcoming events</h2>
         </div>
         <div id="dogodki" class="col-md-8 col-12">
-                    <!-- auto-filled -->
+                    
+<!-- chatGPT gen -->
+<div id="spreadsheet-data"></div>
+<!-- END chatGPT gen -->
+<style>
+        #spreadsheet-data *{
+                text-decoration: none;
+        }
+
+        #spreadsheet-data p {
+                        font-size: 90%;
+                        margin: 0 0 30px;
+                }
+</style>
+
+
         </div>
     </div>
 
 <footer>
-<p class="lang-si"><img src="img/fav/favicon-16x16.png" alt="logo Suzana Tratnik" title="logo" />Vse pravice pridržane 2020 Suzana Tratnik <span>/</span> fotografija: Nada Žgank <span>/</span> splet: Heidi Pun</p>
+<p class="lang-si"><img src="img/fav/favicon-16x16.png" alt="logo Suzana Tratnik" title="logo" />Vse pravice pridržane 2023 Suzana Tratnik <span>/</span> fotografija: Nada Žgank <span>/</span> splet: Heidi Pun</p>
 <p class="lang-en"><img src="img/fav/favicon-16x16.png" alt="logo Suzana Tratnik" title="logo" />Copyright 2020 Suzana Tratnik <span>/</span> photography: Nada Žgank <span>/</span> web: Heidi Pun</p>
 </footer>
 
 </div>
+
+<!-- chatGPT gen -->
+
+<script>
+        function displaySpreadsheetData() {
+          var spreadsheetURL = '1zZ40wQIbLyHwlvM50jjTW0Ij31EIPx700hM9V_R9Qgo';
+          var sheetName = 'Events';
+    
+          var urlColumn = 'url';
+          var nameColumn = 'ime';
+          var detailsColumn = 'podrobnosti';
+    
+          // Fetching the data from Google Spreadsheet
+          fetch(
+            'https://docs.google.com/spreadsheets/d/' +
+              spreadsheetURL +
+              '/gviz/tq?tqx=out:json&sheet=' +
+              sheetName
+          )
+            .then(function(response) {
+              return response.text();
+            })
+            .then(function(text) {
+          var json = JSON.parse(text.substr(47).slice(0, -2));
+          var rows = json.table.rows;
+
+          // Iterating over each row in the spreadsheet, starting from the second row
+          for (var i = 1; i < rows.length; i++) {
+            var name = rows[i].c[0].v;
+            var details = rows[i].c[1].v;
+            var url = rows[i].c[2].v;
+
+            console.log("url" + url);
+            console.log("name" + name);
+            console.log("details" + details);
+
+            // Creating HTML elements for each row
+            var div = document.createElement('div');
+            var link = document.createElement('a');
+            link.href = url;
+            var heading = document.createElement('h6');
+            heading.textContent = name;
+            var paragraph = document.createElement('p');
+            paragraph.textContent = details;
+
+            // Constructing the HTML structure
+            link.appendChild(heading);
+            link.appendChild(paragraph);
+            div.appendChild(link);
+
+            // Appending the container div to the main div
+            var container = document.getElementById('spreadsheet-data');
+            container.appendChild(div);
+          }
+            });
+        }
+    
+        document.addEventListener('DOMContentLoaded', displaySpreadsheetData);
+      </script>
+
+<!-- END chatGPT gen -->
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
